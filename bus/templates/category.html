@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+​
+{% block content %}
+<div class="container-fluid">
+  <div class="jumbotron jumbotron-fluid" id="jumbo">
+    <div class="container">
+      <h1 class="text-center"><strong>CATEGORIES</strong></h1>
+    </div>
+  </div>
+  <div class="row">
+  {% for single_img in images %}
+  <div class="col-md-4" style="margin-top:10px; ">
+      <!-- Card -->
+      <div class="card" style="height: 500px;">
+    
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{{single_img.image.url}}"
+            alt="{{image.name}}">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+          
+        </div>
+      
+    
+        <!-- Card content -->
+        <div class="card-body">
+    
+          <!-- Title -->
+          <h4 class="card-title">Name:<p class="Test">{{single_img.description  }}</p></h4>
+          <input type="submit" class="btn btn-outline-success btn-rounded waves-effect" value="Choose">
+         
+        </div>
+    
+      </div>
+      <!-- Card -->
+    </div>
+  
+  {% endfor %}
+  </div>
+</div>
+{% endblock%}

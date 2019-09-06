@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+​
+{% block content %}
+<div class="container-fluid">
+  <div class="jumbotron jumbotron-fluid" id="jumbo">
+    <div class="container">
+      <h1 class="text-center"><strong>Cars</strong></h1>
+    </div>
+  </div>
+  <div class="row">
+  {% for car in cars %}
+  <div class="col-md-4" style="margin-top:10px; ">
+      <!-- Card -->
+      <div class="card" style="height: 400px;">     
+    
+        <!-- Card content -->
+        <div class="card-body">
+    
+          <!-- Title -->
+          <h4 class="card-title">Name:<p class="Test">{{car.name}}</p></h4>
+          <h4 class="card-title">Origin:<p class="Test">{{car.origin}}</p></h4>
+          <h4 class="card-title">Destination:<p class="Test">{{car.destination}}</p></h4>
+          <h4 class="card-title">Capacity:<p class="Test">{{car.capacity}}</p></h4>
+          <h4 class="card-title">Charges:<p class="Test">{{car.charges}}</p></h4>
+          
+        </div>
+    
+      </div>
+      <!-- Card -->
+    </div>
+  
+  {% endfor %}
+  </div>
+</div>
+{% endblock%}

@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+​
+{% block content %}
+<div class="container-fluid">
+  <div class="jumbotron jumbotron-fluid" id="jumbo" style="background-image:url('https://buupass.com/app/themes/bus/assets/images/rowan-heuvel-27718.png')">
+    <div class="container">
+      <h1 class="text-center"><strong>KNOW THE BUS YOU CAN USE</strong></h1>
+    </div>
+  </div>
+  <div class="row">
+  {% for image in images %}
+  <div class="col-md-4" style="margin-top:10px; ">
+      <!-- Card -->
+      <div class="card" style="height: 500px;">
+    
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{{image.image.url}}"
+            alt="{{image.name}}">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+          
+        </div>
+      
+    
+        <!-- Card content -->
+        <div class="card-body">
+    
+          <!-- Title -->
+          <h4 class="card-title">Name:<p class="Test">{{image.name}}</p></h4>
+          <!-- Text -->
+          <p class="card-text"><b>Description</b>: {{image.description}} </p>
+          <!-- Button -->
+            <p class="card-text"><b>Amount</b>:{{image.amount}}</p>
+            <a class="btn btn-primary" href="{% url 'comment'%}">Comment</i> </a>
+        </div>
+    
+      </div>
+      <!-- Card -->
+    </div>
+  
+  {% endfor %}
+  </div>
+</div>
+{% endblock%}
